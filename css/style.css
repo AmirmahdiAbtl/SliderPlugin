@@ -1,0 +1,32 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.a{
+    width: 100%;
+    height: 400px;
+    background: #aaaaaa;
+}
+.content{
+    width: 100%;
+    height: 800px;
+    background: #0f620f;
+}
+footer{
+    width: auto;
+    height: 300px;
+    background: lightsalmon;
+}
+.menu{
+    width: 100%;
+    height: 50px;
+}
+.none-padding{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#amir{
+    width: 100%;
+    height: 100px;
+}

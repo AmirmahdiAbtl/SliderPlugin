@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script src="plugin.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pluginStyle.css">
+    
+</head>
+<body>
+    
+    <div class="a"> 
+      <div class="slider col-md-12 none-padding"></div>
+    </div>
+    
+<script>
+    $(".a").slider({
+        //You can specify the all of the slider image to one array alike Below
+        img : ["image/slider2.jpg","image/slider1.jpg","image/slider6.jpg","image/slider7.jpg"],
+        //You can specify the Back & Next Button
+        arr : "image/arrow.png",
+        //You can specify the delay time (Just note that time is in milliseconds)
+        arrowEnable: true,
+        timerEnable: false,
+        time : 1000
+    });
+</script>
+</body>
+</html>
