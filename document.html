@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pluginStyle.css">
+    <script src="jquery.js"></script>
+    <script src="plugin.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top nav-doc">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">PGSlider</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">About</a></li>
+              <li><a href="demo.html">Demo</a></li>
+              <li><a href="#">Document</a></li>
+              <li><a href="index.html">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+
+      
+    <div class="cont col-md-12 none-padding">
+        <div class="downloadBox col-md-12 col-sm-12 col-xs-12 img-responsive">
+            <h1>Build fast, responsive Slider with PGSlider</h1>
+            <p>you can create your slider in any tag With the fastest and most convenient way</p>
+            <a href="https://github.com/AmirmahdiAbtl/downloadPlugin/archive/master.zip" style="color: black;" download><button class="btn">Download Plugin</button></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="Document col-md-12 col-sm-12 col-xs-12">
+            <h1 class="doc-title">JavaScript</h1>
+            <p>You have plugin.js file in your js folder When you downloaded this plugin but if you didnt Download plugin file you can copy below code to a js file and set this name for example "plugin.js" now you can use this plugin in your code by
+                <code>&lt;script&gt</code> tag alike : <code>&lt;script src="js/plugin.js"&gt;&lt;/script&gt;</code></p>
+            <div class="code col-md-8 col-sm-10 col-xs-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-2">
+<pre><code>(function($){
+$.fn.slider = function(useroption){
+    var option = $.extend({
+        // default argument
+        img : ["image/slider1.jpg","image/slider2.jpg","image/slider3.jpg"],
+        arr : "image/arrow.png",
+        arrowEnable : true,
+        timerEnable : true,
+        time : 2000
+    },useroption)
+    this.each(function (){
+        let i = 0;
+        var header = $(this);
+        var slider = $(".slider");
+        var arrowRight = $("<img>").attr("src",option.arr).addClass("arrowRight");
+        var arrowLeft = $("<img>").attr("src",option.arr).addClass("arrowLeft");
+        var img = $("<img>").attr("src",option.img[i]).addClass("sliderimg");
+        var buttonPack = [];
+        slider.append(img);
+        if(option.arrowEnable === true){
+            slider.append(arrowRight).append(arrowLeft);
+        }
+        header.append(slider);
+        if(option.arrowEnable === true){
+            arrowRight.click(function (){
+                i++;
+                var p = i;
+                if(i === option.img.length){
+                    i = 0;
+                }
+                img.attr("src",option.img[i]);
+                slider.append(img).append(arrowRight).append(arrowLeft);
+                header.append(slider);
+            });
+            arrowLeft.click(function (){
+                i--;
+                var p = i;
+                if(i === -1){
+                    i = option.img.length -1;
+                }
+                img.attr("src",option.img[i]);
+                slider.append(img).append(arrowRight).append(arrowLeft);
+                header.append(slider);
+            });
+        }
+        if(option.timerEnable === true){
+            setInterval(function (){
+                i++;
+                var p =i;
+                if(i === option.img.length){
+                    i = 0;
+                }
+                img.attr("src",option.img[i]);
+                slider.append(img);
+                if(option.arrowEnable === true){
+                    slider.append(arrowRight).append(arrowLeft);
+                }
+                header.append(slider);
+            },option.time);
+        }
+    });
+}
+})(jQuery)</code></pre></div>
+        </div>
+        <div class="Document col-md-12 col-sm-12 col-xs-12">
+            <h1 class="doc-title">CSS</h1>
+            <p>You have pluginStyle.css file in your css folder When you downloaded this plugin but if you didnt Download plugin file you can copy below code to a js file and set this name for example "pluginStyle.css" now you can use this plugin in your code by
+                <code>&lt;link&gt</code> tag alike : <code>&lt;link rel="stylesheet" href="css/pluginStyle.css"/&gt;</code></p>
+            <div class="code col-md-8 col-sm-10 col-xs-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-2">
+<pre><code>
+.slider{
+    width: 100%;
+    height: 100%;
+}
+.sliderimg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.arrowRight{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 195px;
+    right: 2%;
+    top: 45%;
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+.arrowLeft{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 195px;
+    left: 2%;
+    transform: rotate(180deg);
+    top: 45%;
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+.arrowRight:hover{
+    width: 45px;
+    height: 45px;
+}
+.arrowLeft:hover{
+    width: 45px;
+    height: 45px;
+}
+</code></pre></div>
+        </div>
+        <div class="Document col-md-12 col-sm-12 col-xs-12">
+            <h1 class="doc-title">HTML</h1>
+            <p>I ) Now you can added js and css file to your html code. you Just use the following two tags in your code
+                <br>1 : <code>&lt;link rel="stylesheet" href="css/pluginStyle.css"/&gt;</code>
+                <br>2 : <code>&lt;script src="js/plugin.js"&gt;&lt;/script&gt;</code></p></p>
+            <div class="code col-md-8 col-sm-10 col-xs-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-2">
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;link rel="stylesheet" href="css/pluginStyle.css"&gt;
+        &lt;script src="js/plugin.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>  
+        </div>
+        <p class="col-xs-12 col-md-12 col-sm-12">II ) Now you shoud adding two tags for using this plugin.</p> 
+        <div class="code col-md-8 col-sm-10 col-xs-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-2">
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;link rel="stylesheet" href="css/pluginStyle.css"&gt;
+        &lt;script src="js/plugin.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="header"&gt;
+            &lt;div class="slider"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>   
+        </div> 
+        <p class="col-xs-12 col-md-12 col-sm-12">III ) And finally called plugin in your parent of slider tag ( to this example called on header )</p> 
+        <div class="code col-md-8 col-sm-10 col-xs-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-2">
+<pre><code> $(".header").slider({
+    img : ["image/slider2.jpg","image/slider1.jpg","image/slider6.jpg","image/slider7.jpg"],
+    arr : "image/arrow.png",
+    arrowEnable: true,
+    timerEnable: false,
+    time : 1000
+});</code></pre></div>
+                
+                <p class="det col-xs-12 col-md-12 col-sm-12"> img : pass your image do you want to using in slider</p>
+                <p class="det col-xs-12 col-md-12 col-sm-12"> arr : pass your arrow image do you want to using in slider (Next and Prev button)</p>
+                <p class="det col-xs-12 col-md-12 col-sm-12"> arrowEnable : if you like use arrow to slider pass "treu" else pass "false" this value was "true" By default</p>
+                <p class="det col-xs-12 col-md-12 col-sm-12"> timerEnable : If you like to change the image at one time a head pass "true" and else pass "false" this value was "true" By default</p>
+                <p class="det col-xs-12 col-md-12 col-sm-12"> time : set a time to whenever changed images (ms) alike : (1000ms) = (1s)</p>
+                
+        </div>
+    </div>
+    <footer class="col-md-12 text-center">
+        <p>this Website created by AmirmahdiABTL</p>
+    </footer>
+</body>
+</html>

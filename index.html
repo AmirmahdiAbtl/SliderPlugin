@@ -5,23 +5,85 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="jquery.js"></script>
-    <script src="plugin.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <title>Home</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pluginStyle.css">
+    <script src="jquery.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@500&display=swap" rel="stylesheet">
     
 </head>
 <body>
     
-    <div class="a"> 
+    <!-- <div class="a"> 
       <div class="slider col-md-12 none-padding"></div>
-    </div>
-    
+    </div> -->
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top" id="nav">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">PGSlider</a>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="nav-item"><a href="#about">About</a></li>
+                  <li class="nav-item"><a href="demo.html">Demo</a></li>
+                  <li class="nav-item"><a href="document.html">Document</a></li>
+                  <li class="nav-item"><a href="#">Home</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="content col-md-12 text-center">
+              <h1>You Can Create Slider Anywhere</h1>
+              <h3>Just copy this code into your program.and nothing else</h3>
+              <p>So click the quick button and create your slider</p>
+              <a href="demo.html" style="color: black;"><button>Create Slider</button></a>
+          </div>
+    </header>
+    <main>
+        <div class="About col-md-12" id="About">
+            <h1 class="col-md-12 text-center">About</h1>
+            <div class="code col-md-6 col-sm-10 col-xs-10">
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;link rel="stylesheet" href="css/pluginStyle.css"&gt;
+        &lt;script src="js/plugin.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="header"&gt;
+            &lt;div class="slider"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;$(".header").slider()&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            <a href="document.html" style="color: black;"><button class="more-btn">Read More</button></a>
+        </div>
+        <div class="container">
+          <div class="demo col-md-12 none-padding" id="Demo">
+            <h1 class="col-md-12 text-center">Demo</h1>
+            <div class="header col-md-12 none-padding"> 
+                <div class="slider col-md-12 none-padding"></div>
+            </div>
+            <a href="demo.html" style="color: black;"><button class="more-btn">More Test</button></a>
+          </div>
+        </div>
+    </main>
+    <footer class="col-md-12 text-center">
+        <p>this Website created by AmirmahdiABTL</p>
+    </footer>
 <script>
-    $(".a").slider({
+    $(".header").slider({
         //You can specify the all of the slider image to one array alike Below
         img : ["image/slider2.jpg","image/slider1.jpg","image/slider6.jpg","image/slider7.jpg"],
         //You can specify the Back & Next Button
@@ -32,5 +94,6 @@
         time : 1000
     });
 </script>
+<script src="js/app.js"></script>
 </body>
 </html>

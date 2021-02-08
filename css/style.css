@@ -1,25 +1,30 @@
-body{
-    padding: 0;
-    margin: 0;
-}
-.a{
-    width: 100%;
-    height: 400px;
-    background: #aaaaaa;
-}
-.content{
-    width: 100%;
-    height: 800px;
-    background: #0f620f;
-}
-footer{
-    width: auto;
+
+.header{
+    width: 600px;
     height: 300px;
-    background: lightsalmon;
 }
-.menu{
-    width: 100%;
-    height: 50px;
+.navbar-default{
+    background-color: transparent;
+    border-color: transparent;
+    transition: all 500ms ease;
+    margin-bottom: 0;
+}
+.nav-doc{
+    position: relative;
+}
+.navbar-default .navbar-nav > li > a{
+    font-family: 'Roboto', sans-serif;
+}
+.navbar-brand{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+}
+header{
+    min-height: 100vh;
+    background: url("../image/gray-background.png") center/cover no-repeat;
+    display: grid;
+    place-items: center;
+    margin-bottom: 2rem;
 }
 .none-padding{
     padding-left: 0px;
@@ -29,4 +34,124 @@ footer{
 #amir{
     width: 100%;
     height: 100px;
+}
+.content{
+    font-family: 'Open Sans', sans-serif;
+}
+.content h1{
+    word-spacing: 0.5rem;
+}
+.content button{
+    background-color: transparent;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+.content button:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+main{
+    height: auto;
+    width: 100%;
+}
+.About ,.demo{
+    display: grid;
+    place-items: center;
+    margin-top: 4rem;
+    font-family: 'Open Sans', sans-serif;
+}
+.About h1{
+    padding-bottom: 4rem;
+}
+.code{
+    height: auto;
+    background-color: black;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+    box-shadow: rgba(0,0,0,0.2) 0px 5px 15px;
+}
+pre{
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+}
+.more-btn{
+    background-color: transparent;
+    border-color: #000000;
+    padding: 0.5rem 1.5rem;
+    transition: all 500ms ease;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+}
+.more-btn:hover{
+    background-color: #000000;
+    color: #ffffff;
+    
+}
+.cont{
+    height: auto;
+}
+.downloadBox{
+    background: url("../image/download-back.png") center/cover no-repeat;
+    text-align: center;
+}
+.downloadBox h1{
+    padding: 12rem 0 4rem 0;
+    font-family: 'Open Sans', sans-serif;
+
+}
+.downloadBox p{
+    padding-bottom: 2rem;
+}
+.downloadBox button{
+    margin-bottom: 12rem;
+    background-color: #ffffff;
+    box-shadow: rgba(0,0,0,0.2) 0px 5px 15px;
+    transition: all 500ms ease;
+}
+.downloadBox button:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+.doc-title{
+    padding: 2rem;
+}
+.Document p{
+    padding: 0 2rem 2rem 2rem;
+}
+.det{
+    padding-bottom: 0 !important;
+}
+.demo{
+    margin-bottom: 8rem;
+}
+.demo h1{
+    padding-bottom: 4rem;
+}
+footer{
+    background-color: rgb(233, 233, 233);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.demo-resize{
+    height: 500px;
+    background-color: black;
+}
+.form{
+    display: grid;
+    place-items: center;
+    margin-top: 4rem;
+}
+.input{
+    width: 6rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    padding-left: 0.25rem;
+}
+.demo-title{
+    padding-bottom: 3rem;
+    padding-top: 3rem;
 }
